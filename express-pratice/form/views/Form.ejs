@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/insertData" method="post">
+      <input type="text" name="id" />
+      <input type="text" name="name" />
+      <input type="submit" />
+    </form>
+    <table>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+      </tr>
+
+      <table>
+        <% student.forEach(function(el, id) { %>
+        <tr>
+          <td><%= el.id %></td>
+          <td><%= el.name %></td>
+        </tr>
+        <% }) %>
+      </table>
+    </table>
+  </body>
+</html>
+
+
