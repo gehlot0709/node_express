@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/addData" method="post" enctype="multipart/form-data">
+      <input
+        type="text"
+        placeholder="enter your username"
+        name="username"
+        id="username"
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="enter your passowrd"
+        name="password"
+        id="passowrd"
+      />
+      <input type="file" name="image" />
+      <input type="submit" value="submit" />
+
+      <br />
+      <hr />
+      <h1>Uploaded Users</h1>
+      <ul>
+        <% users.forEach(user => { %>
+        <li>
+          <strong><%= user.username %></strong> - <%= user.password %><br />
+          <% if (user.image) { %>
+          <img src="/<%= user.image %>" alt="User Image" width="150" /> <% } %>
+        </li>
+        <% }) %>
+      </ul>
+    </form>
+  </body>
+</html>
