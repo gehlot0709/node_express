@@ -8,9 +8,10 @@ const add = async (req, res) => {
 const login = async (req, res) => {
     const { username, password } = req.body;
     const user = await userModel.findOne({ username: username })
-    console.log(user.password)
+
 
     if (!user) {
+        console.log(user)
         return res.send("user not found");
     }
     if (user.password !== password) {
